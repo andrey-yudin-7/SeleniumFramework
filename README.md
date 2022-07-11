@@ -1,5 +1,5 @@
 
-<b><h3>[1. Description](#description)</h3></b>
+<b><h3>[1. Project description](#description)</h3></b>
 
 <b><h3>[2. How to run](#howtorun)</h3></b>
 
@@ -15,7 +15,7 @@
 - [Screenshots capturing](#screenshots)
 
 <a id="description"></a>
-## __1. Description__
+## __1. Project description__
 
 This is a Selenium Java project with Page Object Mechanism (designing patterns for tests development) built using Maven (build management tool), TestNG (Unit Testing Framework), Data Driven concepts from external resources, generating Logs, Reports, Capturing Screenshots.
 
