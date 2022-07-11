@@ -35,8 +35,6 @@ public class LoginPage {
 	public ForgotPasswordPage forgotPassword()
 	{
 		driver.findElement(forgotPassword).click();
-//		ForgotPassword fp=new ForgotPassword(driver);
-//		return fp;
 		return new ForgotPasswordPage(driver);
 	}
 	
