@@ -48,9 +48,9 @@ $ mvn test -Dbrowser=chrome
 ## __3.Implemented Details__
 <a id="oops"></a>
 * ### __3.1 OOPS concepts achieved__:
-    * __Abstraction__ achieved by interfaces and abstract classes.
+    * __Abstraction__ achieved by interfaces.
 
-    As example By creating a reference variable (driver) of the interface (WebDriver) and creating an Object - as from from _base.java_
+    As example By creating a reference variable (driver) of the interface (WebDriver) and creating an Object - as from _base.java_
     ```
     public WebDriver = new ChromeDriver();
     ```
@@ -107,7 +107,7 @@ $ mvn test -Dbrowser=chrome
 ### __3.2 Parametrizing with different browsers execution, different run mode for local execution and via maven commands, global.properties__. 
 Implemented parametrizing with different browsers(chrome, firefox, edge), webdrivers, different run modes for local execution and via maven commands (local_ide, maven_command).
 
-From _global.properties_
+From _global.properties_:
 ```
 browser=chrome
 chromeDriverVersion=103.0.5060.53
@@ -123,7 +123,7 @@ runMode=local_ide
 #################################################
 ```
 
-From _base.java_
+From _base.java_:
 ```
 String browserName;
 		String runMode = (String) prop.get("runMode");
@@ -293,7 +293,7 @@ public class Listeners extends base implements ITestListener {
 ```
 <a id="reports"></a>
 ### __3.7 Extent Reports__
-Reports are generating using Extent Reports dependency in _pom.xml_, _ExtentReportManager.java_ (with configs) and _Linteners.java_ to trigger report events.
+Reports are generating using Extent Reports dependency defined in _pom.xml_, _ExtentReportManager.java_ (with configs) and _Linteners.java_ to trigger report events.
 
 <img src="src/main/resources/readme_images/reports1.png">
 
