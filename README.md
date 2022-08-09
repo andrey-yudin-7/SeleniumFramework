@@ -40,7 +40,7 @@ Run this project As TestNG Suite for testng.xml file:
 
 Or from command line:
 ```
-andre@DESKTOP-0CPI2F2 MINGW64 /d/QA_projects/Git/SeleniumFramework (master)
+andre@DESKTOP-0CPI2F2 MINGW64 /d/QA_projects/SeleniumFramework (master)
 $ mvn test -Dbrowser=chrome
 ```
 
@@ -54,7 +54,7 @@ $ mvn test -Dbrowser=chrome
     ```
     public WebDriver = new ChromeDriver();
     ```
-    as another example from _Listeners.java_ where used __implements ItestListener__ interface:
+    as another example from _Listeners.java_ where used __ItestListener__ interface:
     ```
     public class Listeners extends base implements ITestListener {
     ```
@@ -163,9 +163,9 @@ as _scrollToElement()_ and _getGlobalValue()_ (from global.properties)
 ### __3.4 Page object mechanism.__ Framework built using page object pattern to achieve the following goals for the project:
 
     - easy to maintain project;
-    - easy readability if scripts;
+    - easy readability of scripts;
     - reduce or eliminate duplicacy;
-    - re-usability if code;
+    - re-usability of code;
     - reliability.
 
 For each page created separate page object class to store it's elements and methods used in test classes particular for this page.
@@ -225,7 +225,7 @@ public class excelDataDriven {
 		..........
 ```
 
-also apart from Excel implemented by using DataProvider feature provided by TestNG:
+also apart from Data driven from Excel files implemented another Data driven approach by using DataProvider feature provided by TestNG:
 ```
 	@DataProvider
 	public Object[][] getUserData()
@@ -265,7 +265,7 @@ public class Listeners extends base implements ITestListener {
     	ExtentTest test = extent.createTest(result.getClass().getName() + " :: " + result.getMethod().getMethodName());
     	extentTest.set(test);
     }
-	    @Override		
+    @Override		
     public void onTestFailure(ITestResult result) {					
     	extentTest.get().fail(result.getThrowable());
     	WebDriver driver = null;
