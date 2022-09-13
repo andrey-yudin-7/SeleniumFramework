@@ -19,8 +19,7 @@
 
 This is a Selenium Java project with Page Object Mechanism (designing patterns for tests development) built using Maven (build management tool), TestNG (Unit Testing Framework), Data Driven concepts from external resources, generating Logs, Reports, Capturing Screenshots.
 
-As the test target of this project as an example used the website https://www.target.com/
-to verify basic functionalities: Login, Home page, Search Product, List of products and product forms, Checkout validation.
+At the moment, the added tests have been directed to verify only the basic functionalities as Login, Home page, Search Product, List of products and product forms, Checkout validation.
 
 Structure:
 
