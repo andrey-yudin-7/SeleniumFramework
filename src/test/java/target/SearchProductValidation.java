@@ -32,7 +32,7 @@ public class SearchProductValidation extends base {
 		excelDataDriven d = new excelDataDriven();
 		ArrayList<String> data = d.getData("SearchProductValidation");
 		
-		//go to landing page, perform searc and verify product list page elements
+		//go to landing page, perform search and verify product list page elements
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.verifyLandingPageElements();
 		landingPage.performSearch(data.get(1));
