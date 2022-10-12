@@ -19,8 +19,7 @@
 
 This is a Selenium Java project with Page Object Mechanism (designing patterns for tests development) built using Maven (build management tool), TestNG (Unit Testing Framework), Data Driven concepts from external resources, generating Logs, Reports, Capturing Screenshots.
 
-As the test target of this project as an example used the website https://www.target.com/
-to verify basic functionalities: Login, Home page, Search Product, List of products and product forms, Checkout validation.
+At the moment, the added tests have been directed to verify only the basic functionalities as Login, Home page, Search Product, List of products and product forms, Checkout validation.
 
 Structure:
 
@@ -40,7 +39,7 @@ Run this project As TestNG Suite for [_testng.xml_](https://github.com/andrey-yu
 
 Or from command line:
 ```
-andre@DESKTOP-0CPI2F2 MINGW64 /d/QA_projects/Git/SeleniumFramework (master)
+andre@DESKTOP-0CPI2F2 MINGW64 /d/QA_projects/SeleniumFramework (master)
 $ mvn test -Dbrowser=chrome
 ```
 
@@ -163,9 +162,9 @@ as _scrollToElement()_ and _getGlobalValue()_ (from global.properties)
 ### __3.4 Page object mechanism.__ Framework built using page object pattern to achieve the following goals for the project:
 
     - easy to maintain project;
-    - easy readability if scripts;
+    - easy readability of scripts;
     - reduce or eliminate duplicacy;
-    - re-usability if code;
+    - re-usability of code;
     - reliability.
 
 For each page created separate page object class to store it's elements and methods used in test classes particular for this page.
@@ -225,7 +224,7 @@ public class excelDataDriven {
 		..........
 ```
 
-also apart from Excel implemented by using DataProvider feature provided by TestNG:
+also apart from Data driven from Excel files implemented another Data driven approach by using DataProvider feature provided by TestNG:
 ```
 	@DataProvider
 	public Object[][] getUserData()
@@ -265,7 +264,7 @@ public class Listeners extends base implements ITestListener {
     	ExtentTest test = extent.createTest(result.getClass().getName() + " :: " + result.getMethod().getMethodName());
     	extentTest.set(test);
     }
-	    @Override		
+    @Override		
     public void onTestFailure(ITestResult result) {					
     	extentTest.get().fail(result.getThrowable());
     	WebDriver driver = null;
