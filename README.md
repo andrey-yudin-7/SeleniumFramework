@@ -33,7 +33,7 @@ To run this project you need to make sure you have installed Java, Eclipse or an
 
 Clone this project and import it from the file system using IDE (as Eclipse IDE).
 
-Run this project As TestNG Suite for testng.xml file:
+Run this project As TestNG Suite for [_testng.xml_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/testng.xml) file:
 
 <img src="src/main/resources/readme_images/run1.png" width="500">
 
@@ -50,18 +50,18 @@ $ mvn test -Dbrowser=chrome
 * ### __3.1 OOPS concepts achieved__:
     * __Abstraction__ achieved by interfaces.
 
-    As example By creating a reference variable (driver) of the interface (WebDriver) and creating an Object - as from _base.java_
+    As example By creating a reference variable (driver) of the interface (WebDriver) and creating an Object - as from [_base.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/base.java)
     ```
     public WebDriver = new ChromeDriver();
     ```
-    as another example from _Listeners.java_ where used __implements ItestListener__ interface:
+    as another example from [_Listeners.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/Listeners.java) where used __implements ItestListener__ interface:
     ```
     public class Listeners extends base implements ITestListener {
     ```
     
     * __Encapsulation__ - achieved using private locators with public methods to avoid misuse the coding standards of the framework.
     
-    Example from _CheckoutPage.java_:
+    Example from [_CheckoutPage.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/pageObjects/CheckoutPage.java):
     ```
     private By addressCity = By.id("addressFormInput-city");
     
@@ -73,7 +73,7 @@ $ mvn test -Dbrowser=chrome
 
     * __Polymorphism__ - achieved using combination of overloading and overriding.
 
-    Used Implicit wait as an example of overloading from _base.java_:
+    Used Implicit wait as an example of overloading from [_base.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/base.java):
     ```
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     ```
@@ -82,7 +82,7 @@ $ mvn test -Dbrowser=chrome
     .findElement(“<All type of locator e.g. id , xpath , cssClass>”).
     ```
 
-    overriding methods used in _Listeneres.java_. As example:
+    overriding methods used in [_Listeners.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/Listeners.java). As example:
     ```
         @Override		
         public void onTestSuccess(ITestResult result) {					
@@ -93,7 +93,7 @@ $ mvn test -Dbrowser=chrome
     ```
 
     * __Inheritance__ - achieved using extends base as an example in test classes.
-    Where methods declared in _base.java_ called in child classes. As example in _HomePage.java_ we are getting intializeDriver() method declared in _base.java_ without creating any object:
+    Where methods declared in _base.java_ called in child classes. As example in [_HomePage.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/test/java/target/HomePage.java) we are getting intializeDriver() method declared in [_base.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/base.java) without creating any object:
     
     ```
     public class HomePage extends base {
@@ -105,9 +105,9 @@ $ mvn test -Dbrowser=chrome
     ```
 <a id="parametrizing"></a>
 ### __3.2 Parametrizing with different browsers execution, different run mode for local execution and via maven commands, global.properties__. 
-Implemented parametrizing with different browsers(chrome, firefox, edge), webdrivers, different run modes for local execution and via maven commands (local_ide, maven_command).
+Implemented parametrizing with different browsers (chrome, firefox, edge), webdrivers, different run modes for local execution and via maven commands (local_ide, maven_command).
 
-From _global.properties_:
+From [_global.properties_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/global.properties):
 ```
 browser=chrome
 chromeDriverVersion=103.0.5060.53
@@ -123,7 +123,7 @@ runMode=local_ide
 #################################################
 ```
 
-From _base.java_:
+From [_base.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/base.java):
 ```
 String browserName;
 		String runMode = (String) prop.get("runMode");
@@ -157,7 +157,7 @@ String browserName;
 ```
 <a id="methods"></a>
 ### __3.3 Reusable methods.__
-Created _Utilities.java class_ in resources folder to reduce the code by using reusable methods.
+Created [_Utilities.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/Utilities.java) class_ in resources folder to reduce the code by using reusable methods.
 as _scrollToElement()_ and _getGlobalValue()_ (from global.properties)
 <a id="pageobject"></a>
 ### __3.4 Page object mechanism.__ Framework built using page object pattern to achieve the following goals for the project:
@@ -172,7 +172,7 @@ For each page created separate page object class to store it's elements and meth
 
 <img src="src/main/resources/readme_images/pageobject.png">
 
-As example part of _LoginPage.java_:
+As example part of [_LoginPage.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/pageObjects/LoginPage.java):
 ```
 public class LoginPage {
 	
@@ -213,7 +213,7 @@ In this framework, the Data driven approach (reading data files and storing inpu
 
 <img src="src/main/resources/readme_images/datadrivenexcel.png" width="700">
 
-from _excelDataDriven.java_:
+from [_excelDataDriven.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/excelDataDriven.java):
 ```
 public class excelDataDriven {
 	
@@ -251,7 +251,7 @@ also apart from Excel implemented by using DataProvider feature provided by Test
 ### __3.6 Listeners__
 In this framework added Listeners (an ITestListener interface that modifies the default TestNG's behaviour). They are components in TestNG that listens (keep track) of test execution and helps to perform actions at multiple stages of test execution.
 
-In this framework Listeners are mostly used for the report generating and screenshots capturing on test failures executions. From _Listeners.java_
+In this framework Listeners are mostly used for the report generating and screenshots capturing on test failures executions. From [_Listeners.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/Listeners.java)
 
 ```
 public class Listeners extends base implements ITestListener {
@@ -293,7 +293,7 @@ public class Listeners extends base implements ITestListener {
 ```
 <a id="reports"></a>
 ### __3.7 Extent Reports__
-Reports are generating using Extent Reports dependency defined in _pom.xml_, _ExtentReportManager.java_ (with configs) and _Linteners.java_ to trigger report events.
+Reports are generating using Extent Reports dependency defined in [_pom.xml_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/pom.xml), [_ExtentReportManager.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/ExtentReportManager.java) (with configs) and [_Listeners.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/Listeners.java) to trigger report events.
 
 <img src="src/main/resources/readme_images/reports1.png">
 
@@ -302,10 +302,10 @@ Reports are generating using Extent Reports dependency defined in _pom.xml_, _Ex
 <a id="logs"></a>
 
 ### __3.8 Logs__
-Logs mechanisme implemented using log4j (log4j-api and log4j-core dependecies in pom.xml). Logs are stored in \reports\logs folder. Configs are stored in \src\main\resources\log4j2.xml:
+Logs mechanisme implemented using log4j (log4j-api and log4j-core dependecies in [_pom.xml_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/pom.xml)). Logs are stored in \reports\logs folder. Configs are stored in \src\main\resources\ [_log4j2.xml_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/resources/log4j2.xml):
 <a id="screenshots"></a>
 ### __3.9 Screenshots capturing__
-Screenshots capturing mechanisme is triggered from _Listeners.java_ on test failures:
+Screenshots capturing mechanisme is triggered from [_Listeners.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/Listeners.java) on test failures:
 
 ```
     	try {
@@ -315,7 +315,7 @@ Screenshots capturing mechanisme is triggered from _Listeners.java_ on test fail
 			log.error("Test failed, cannot attach screenshot");
 		}
 ```
-using getScreenShotPath methods from _base.java_:
+using getScreenShotPath methods from [_base.java_](https://github.com/andrey-yudin-7/SeleniumFramework/blob/master/src/main/java/resources/base.java):
 ```
 	public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
 		Date d = new Date();
